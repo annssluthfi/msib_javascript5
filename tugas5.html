@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+    
+    <link rel="stylesheet" href="css/stylejquery.css">
+</head>
+<body>
+    <h1>Letakkan kursor di masing-masing kotak untuk melihat gambar</h1>
+
+    <div id="div1">Hewan Bebek
+        <audio id="suaraBebek" src="audio/bebek.mp3" preload="auto"></audio>
+    </div>
+    <div id="div2">Hewan Kucing
+        <audio id="suaraKucing" src="audio/kucing.mp3" preload="auto"></audio>
+    </div>
+    <div id="div3">Hewan Ayam
+        <audio id="suaraAyam" src="audio/ayam.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        //tugas hari ini
+        //ketika mousenya di atas gambar atau kotak, maka hewannya bisa bersuara
+        $("document").ready(function(){
+            $("#div1").mouseover(function(){
+                $(this).css({
+                    background: "url('https://www.shutterstock.com/image-photo/duck-on-white-background-260nw-1037486425.jpg')"
+                });
+                
+                //memunculkan suara bebek
+                $("#suaraBebek")[0].play();
+            });
+
+            $("div").mouseout(function(){
+                $(this).css({
+                    background: "green",
+                });
+            });
+
+            $("#div2").mouseover(function(){
+                $(this).css({
+                    background: "url('https://www.shutterstock.com/image-photo/pretty-bicolor-ragdoll-cat-sitting-260nw-2310893603.jpg')"
+                });
+
+                //memunculkan suara kucing
+                $("#suaraKucing")[0].play();
+            });
+
+            $("#div3").mouseover(function(){
+                $(this).css({
+                    background: "url('https://www.shutterstock.com/image-photo/air-fryer-chicken-wings-glazed-600nw-2286706431.jpg')"
+                });
+
+                //memunculkan suara ayam
+                $("#suaraAyam")[0].play();
+            });
+        });
+    </script>
+</body>
+</html>
